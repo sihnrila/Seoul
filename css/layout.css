@@ -1,0 +1,122 @@
+html,
+body {
+	width: 100vw;
+	background-color: #6e67d6;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+.wrap {
+	width: 100%;
+	height: 100vh;
+	overflow: hidden;
+	background: url(../img/background_top.png) center;
+	background-size: cover;
+}
+.wrap2 {
+	width: 100%;
+	height: calc(100vh + 4rem);
+	background: url(../img/background_top.png) center;
+	background-size: cover;
+}
+.contents_area {
+	width: 100%;
+	max-width: 768px;
+	height: 100vh;
+	margin: 0 auto;
+}
+.contents_area .top {
+	width: 100%;
+	height: 20%;
+	background-color: #f00;
+	background: url('../img/mobile_logo.png') center no-repeat;
+	background-position: auto 20%;
+}
+.contents_area .contents {
+	width: 100%;
+	height: 50%;
+}
+
+.contents_area .bottom {
+	width: 100%;
+	height: 30%;
+}
+
+/* 모달 */
+.modal-open {
+	overflow: hidden;
+	padding-right: 17px;
+}
+/* 푸터 */
+.footer {
+	background-color: #000000;
+	color: #999999;
+	font-size: 22px;
+}
+.footer .head {
+	border: solid 1px rgba(255, 255, 255, 0.2);
+}
+.footer .head ul {
+	width: 100%;
+	max-width: 420px;
+	margin: 0 auto;
+}
+.footer .head ul li {
+	display: inline-block;
+	width: 49%;
+	font-weight: 300;
+	font-size: 22px;
+	padding: 22px 0;
+	text-align: center;
+}
+.footer .body {
+	padding: 40px 0;
+	width: 100%;
+	height: 290px;
+}
+.footer .body .logo {
+	display: block;
+	width: 100%;
+	height: 48px;
+	background: url('../resources/logo-gray.png') no-repeat center;
+	margin-bottom: 30px;
+}
+.footer .body .logo h1 {
+	font-size: 0;
+}
+.footer .body li {
+	font-size: 22px;
+	font-weight: 300;
+	line-height: 1.5em;
+	color: #999;
+	text-align: center;
+}
+.footer .body li span {
+	font-weight: 300;
+	line-height: 1.5em;
+	color: #fff;
+	padding: 0 15px 0 25px;
+}
+.footer .body li:nth-child(n + 2) {
+	display: inline-block;
+}
+.footer .body li span:first-child {
+	/* padding-left: 0; */
+}
+.footer .body .copy {
+	font-size: 20px;
+	font-weight: 300;
+	text-align: center;
+	margin-top: 20px;
+}
+
+@media screen and (max-width: 1024px) {
+	.modal-open {
+		padding-right: 0;
+	}
+	body::-webkit-scrollbar {
+		display: none;
+	}
+}
