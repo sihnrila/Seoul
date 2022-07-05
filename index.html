@@ -1,0 +1,276 @@
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta property="og:title" content="" />
+		<meta property="og:description" content="" />
+		<meta property="og:image" content="" />
+
+		<title>Document</title>
+
+		<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+		<!-- google fonts-->
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@1.0/nanumsquare.css"
+		/>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@300;400;500;700;900&display=swap"
+			rel="stylesheet"
+		/>
+
+		<link rel="stylesheet" href="./css/reset.css" />
+		<link rel="stylesheet" href="./css/layout.css" />
+		<link rel="stylesheet" href="./css/style.css" />
+
+		<script>
+			let vh = window.innerHeight * 0.01;
+			document.documentElement.style.setProperty('--vh', `${vh}px`);
+
+			function openModal() {
+				document.querySelector('body').classList.add('modal-open');
+			}
+			function closeModal() {
+				document.querySelector('body').classList.remove('modal-open');
+			}
+			function openmodal_004() {
+				openModal();
+				document.querySelector('.modal02.modal_002').classList.add('in');
+			}
+			function closemodal_004() {
+				closeModal();
+				document.querySelector('.modal02.modal_002').classList.remove('in');
+			}
+
+			function openModal2() {
+				document.querySelector('body').classList.add('modal-open2');
+			}
+			function closeModal2() {
+				document.querySelector('body').classList.remove('modal-open2');
+			}
+			function openmodal_005() {
+				openModal();
+				document.querySelector('.modal02.modal_003').classList.add('in');
+			}
+			function closemodal_005() {
+				closeModal();
+				document.querySelector('.modal02.modal_003').classList.remove('in');
+			}
+		</script>
+	</head>
+
+	<body>
+		<div class="wrap2">
+			<div class="head"></div>
+			<div class="contents_area">
+				<div class="top"></div>
+				<div class="contents">
+					<div class="map_area">
+						<div class="mapContainer">
+							<div id="map">
+								<div class="bgBox bg_0"></div>
+								<div class="bgBox bg_1">
+									<div class="lantern" id="lantern_0"></div>
+								</div>
+								<div class="bgBox bg_2">
+									<div class="lantern" id="lantern_1"></div>
+									<div class="lantern" id="lantern_2"></div>
+								</div>
+								<div class="bgBox bg_3">
+									<div class="lantern" id="lantern_3"></div>
+									<div class="lantern" id="lantern_4"></div>
+								</div>
+								<div class="bgBox bg_4"></div>
+								<div class="bgBox bg_5">
+									<div class="lantern" id="lantern_5"></div>
+									<div class="lantern" id="lantern_6"></div>
+									<div class="lantern" id="lantern_7"></div>
+								</div>
+								<div class="bgBox bg_6">
+									<div class="lantern" id="lantern_8"></div>
+									<div class="lantern" id="lantern_9"></div>
+								</div>
+								<div class="bgBox bg_7"></div>
+							</div>
+						</div>
+						<div class="map_wrapper"></div>
+					</div>
+				</div>
+				<div class="bottom">
+					<div class="container">
+						<div class="wrapper">
+							<div class="row">
+								<button onclick="">00</button>
+								<button onclick="">01</button>
+								<button onclick="">02</button>
+								<button onclick="">02</button>
+							</div>
+							<div class="row">
+								<button onclick="">00</button>
+								<button onclick="">01</button>
+								<button onclick="">02</button>
+							</div>
+							<div class="row">
+								<button onclick="">00</button>
+								<button onclick="">01</button>
+								<button onclick="">02</button>
+								<button onclick="openmodal_004()">완성</button>
+							</div>
+							<nav class="bottomNav" onclick="openmodal_004()">
+								한지등을 바로 보고 싶다면 여기를 클릭하세요!
+							</nav>
+						</div>
+					</div>
+					<!--	<div id="log"></div>
+				<button onclick="gpsTracker.startTracker()">GPS 위치 추적 시작</button>-->
+					<!--<button onclick="gpsTracker.stopTracker();gpsTracker.clearLog()">
+					GPS 위치 추적 중지
+				</button>
+				<button onclick="gpsTracker.refreshTracker()">GPS 재시작</button>
+				<br />
+				<button onclick="gpsTracker.isSupportGPS()
+			? alert('GPS 위치 추적을 지원하는 접속 환경입니다.')
+			: alert('GPS 위치 추적을 지원하지 않는 접속 환경입니다.');">
+					GPS 사용 가능 여부
+				</button>
+				<button onclick="gpsTracker.checkLocation()
+			? alert('청계천 근처에 있습니다.')
+			: alert('청계천 이외 지역에 있거나, GPS가 활성화 되어있지 않습니다.');">
+					접속 지역 확인
+				</button>-->
+				</div>
+			</div>
+		</div>
+
+		<!-- // 하단 네비게이션 모달임 -->
+		<div class="modal_002 modal02 fade">
+			<div class="modal-background"></div>
+			<div class="modal-dialog">
+				<div class="modal-dialog-title">
+					<h2>
+						잠깐!<br />
+						한지등을 아직 다 모으지 않았어요
+					</h2>
+				</div>
+				<div class="modal-dialog-contents">
+					<div>
+						<p>
+							청계천을 거닐며 한지등 10종을<br />
+							모두 모으면 푸짐한 경품이 기다립니다!<br />
+							(소요시간 : 약 30분 내외)<br />
+							<br />
+							도전을 포기하시겠어요?<br />
+						</p>
+					</div>
+				</div>
+				<div class="modal-dialog-top">
+					<button class="btn-full" onclick="closemodal_004()">아니오</button>
+					<button class="btn-full_2" onclick="closemodal_004()">네</button>
+				</div>
+			</div>
+		</div>
+
+		<!-- // 하단 네비게이션 모달2 임 -->
+		<div class="modal_003 modal02 fade">
+			<div class="modal-background"></div>
+			<div class="modal-dialog">
+				<div class="modal-dialog-title">
+					<h2>축하드려요!</h2>
+				</div>
+				<div class="modal-dialog-contents">
+					<div>
+						<p>
+							10개의 한지등을 모두 찾으셨네요.<br />
+							상품 지금을 위해 연락처가 필요해요.<br />
+							연락처는 상품 지급에만 사용됩니다.<br />
+						</p>
+					</div>
+					<div class="m-back"></div>
+				</div>
+				<div class="modal-dialog-top">
+					<button class="btn-full" onclick="closemodal_005()">아니오</button>
+				</div>
+			</div>
+		</div>
+
+		<script src="js/morpheusGpsTracker.js"></script>
+
+		<script>
+			let gpsTracker = new GpsTracker();
+
+			// 로그 표시를 위한 dom object의 id
+			gpsTracker.log = 'log';
+			// 지도 스크롤을 위한 dom object의 id
+			gpsTracker.map = 'map';
+
+			// 로그 표시
+			gpsTracker.isEnabledLog = true;
+			// 지도 스크롤 적용
+			gpsTracker.isEnabledMap = true;
+
+			//이벤트 영역에 진입 시 실행 함수 선언
+			gpsTracker.enterEventArea = (idx) => {
+				alert(`${idx}번 영역에 진입하였습니다.`);
+				gpsTracker.turnOn(idx);
+			};
+
+			// GPS 데이터 초기화 및 추적 준비
+			axios
+				.get('https://sihnrila.github.io/json/')
+				//.get('https://soundart.or.kr/getData/ysnzp.php')
+				//.get('https://soundart.or.kr/getData/testData.php')
+				.then((response) => {
+					gpsTracker.initDataset(response.data);
+				})
+				.catch((error) => {
+					// handle error
+					console.log(error);
+				})
+				.then(() => {
+					// always executed
+				});
+
+			// 하단 스크롤
+			let lastScrollTop = 0;
+			let delta = 10;
+			let fixBox = document.querySelector('.bottomNav');
+			let fixBoxHeight = fixBox.offsetHeight;
+			let didScroll;
+			//스크롤 이벤트
+			window.onscroll = function (e) {
+				didScroll = true;
+			};
+
+			//0.25초마다 스크롤 여부 체크하여 스크롤 중이면 hasScrolled() 호출
+			setInterval(function () {
+				if (didScroll) {
+					hasScrolled();
+					didScroll = false;
+				}
+			}, 0);
+
+			function hasScrolled() {
+				let nowScrollTop = window.scrollY;
+				if (Math.abs(lastScrollTop - nowScrollTop) <= delta) {
+					return;
+				}
+				if (nowScrollTop > lastScrollTop && nowScrollTop > fixBoxHeight) {
+					//Scroll down
+					fixBox.classList.remove('show');
+				} else {
+					if (nowScrollTop + window.innerHeight < document.body.offsetHeight) {
+						//Scroll up
+						fixBox.classList.add('show');
+						console.log('scroll up');
+					}
+				}
+				lastScrollTop = nowScrollTop;
+			}
+		</script>
+	</body>
+</html>
