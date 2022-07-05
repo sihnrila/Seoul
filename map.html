@@ -7,11 +7,9 @@
 		<meta property="og:description" content="" />
 		<meta property="og:image" content="" />
 
-
 		<title>Document</title>
 
 		<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-
 
 		<!-- google fonts-->
 		<link
@@ -128,6 +126,23 @@
 							</nav>
 						</div>
 					</div>
+					<!--	<div id="log"></div>
+				<button onclick="gpsTracker.startTracker()">GPS 위치 추적 시작</button>-->
+					<!--<button onclick="gpsTracker.stopTracker();gpsTracker.clearLog()">
+					GPS 위치 추적 중지
+				</button>
+				<button onclick="gpsTracker.refreshTracker()">GPS 재시작</button>
+				<br />
+				<button onclick="gpsTracker.isSupportGPS()
+			? alert('GPS 위치 추적을 지원하는 접속 환경입니다.')
+			: alert('GPS 위치 추적을 지원하지 않는 접속 환경입니다.');">
+					GPS 사용 가능 여부
+				</button>
+				<button onclick="gpsTracker.checkLocation()
+			? alert('청계천 근처에 있습니다.')
+			: alert('청계천 이외 지역에 있거나, GPS가 활성화 되어있지 않습니다.');">
+					접속 지역 확인
+				</button>-->
 				</div>
 			</div>
 		</div>
@@ -160,7 +175,7 @@
 			</div>
 		</div>
 
-		<!-- // 하단 네비게이션 모달2 -->
+		<!-- // 하단 네비게이션 모달2 임 -->
 		<div class="modal_003 modal02 fade">
 			<div class="modal-background"></div>
 			<div class="modal-dialog">
@@ -183,7 +198,42 @@
 			</div>
 		</div>
 
+		<script src="js/morpheusGpsTracker.js"></script>
+
 		<script>
+			let gpsTracker = new GpsTracker();
+
+			// 로그 표시를 위한 dom object의 id
+			gpsTracker.log = 'log';
+			// 지도 스크롤을 위한 dom object의 id
+			gpsTracker.map = 'map';
+
+			// 로그 표시
+			gpsTracker.isEnabledLog = true;
+			// 지도 스크롤 적용
+			gpsTracker.isEnabledMap = true;
+
+			//이벤트 영역에 진입 시 실행 함수 선언
+			gpsTracker.enterEventArea = (idx) => {
+				alert(`${idx}번 영역에 진입하였습니다.`);
+				gpsTracker.turnOn(idx);
+			};
+
+			// GPS 데이터 초기화 및 추적 준비
+			axios
+				.get('https://sihnrila.github.io/json/')
+				//.get('https://soundart.or.kr/getData/ysnzp.php')
+				//.get('https://soundart.or.kr/getData/testData.php')
+				.then((response) => {
+					gpsTracker.initDataset(response.data);
+				})
+				.catch((error) => {
+					// handle error
+					console.log(error);
+				})
+				.then(() => {
+					// always executed
+				});
 
 			// 하단 스크롤
 			let lastScrollTop = 0;
